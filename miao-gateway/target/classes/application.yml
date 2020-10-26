@@ -1,0 +1,43 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: miao-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.127.152:8848
+    gateway:
+      routes: #配置路由规则
+        - id: auth-server-route
+          uri: lb://miao-auth
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: resource-server-route
+          uri: lb://micro-oauth2-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能
+          lower-case-service-id: true #使用小写服务名，默认是大写
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:10002/rsa/publicKey' #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/auth/oauth/token"

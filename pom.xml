@@ -13,6 +13,7 @@
         <module>miao-gateway</module>
         <module>miao-resource</module>
         <module>security-demo</module>
+        <module>gateway-demo</module>
     </modules>
     <packaging>pom</packaging>
 

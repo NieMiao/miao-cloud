@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
- * @description: 页面跳转管理
+ * @description: 页面跳转管理  
  * @author: Niem
  * @date: 2020/10/19-9:45
  */

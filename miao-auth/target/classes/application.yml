@@ -1,0 +1,16 @@
+server:
+  port: 10002
+spring:
+  application:
+    name: miao-auth
+  redis:
+    database: 0
+    port: 6379
+    host: 192.168.127.152
+    password:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.127.152
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss

@@ -1,0 +1,9 @@
+server:
+  port: 10003
+spring:
+  application:
+    name: miao-resource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.127.152:8848
