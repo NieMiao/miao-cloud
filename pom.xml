@@ -14,6 +14,8 @@
         <module>miao-resource</module>
         <module>security-demo</module>
         <module>gateway-demo</module>
+        <module>01-auth-demo</module>
+        <module>01-gateway-demo</module>
     </modules>
     <packaging>pom</packaging>
 
